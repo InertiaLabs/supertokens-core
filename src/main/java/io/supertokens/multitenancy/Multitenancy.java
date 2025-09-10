@@ -400,10 +400,10 @@ public class Multitenancy extends ResourceDistributor.SingletonResource {
             DuplicateThirdPartyUserException, AnotherPrimaryUserWithPhoneNumberAlreadyExistsException,
             AnotherPrimaryUserWithEmailAlreadyExistsException,
             AnotherPrimaryUserWithThirdPartyInfoAlreadyExistsException {
-        if (Arrays.stream(FeatureFlag.getInstance(main, new AppIdentifier(null, null)).getEnabledFeatures())
+        /*if (Arrays.stream(FeatureFlag.getInstance(main, new AppIdentifier(null, null)).getEnabledFeatures())
                 .noneMatch(ee_features -> ee_features == EE_FEATURES.MULTI_TENANCY)) {
             throw new FeatureNotEnabledException(EE_FEATURES.MULTI_TENANCY);
-        }
+        }*/
 
         AuthRecipeSQLStorage authRecipeStorage = StorageUtils.getAuthRecipeStorage(storage);
         try {
@@ -558,10 +558,10 @@ public class Multitenancy extends ResourceDistributor.SingletonResource {
                                                  String userId, String externalUserId)
             throws FeatureNotEnabledException, TenantOrAppNotFoundException, StorageQueryException,
             UnknownUserIdException {
-        if (Arrays.stream(FeatureFlag.getInstance(main, new AppIdentifier(null, null)).getEnabledFeatures())
+        /*if (Arrays.stream(FeatureFlag.getInstance(main, new AppIdentifier(null, null)).getEnabledFeatures())
                 .noneMatch(ee_features -> ee_features == EE_FEATURES.MULTI_TENANCY)) {
             throw new FeatureNotEnabledException(EE_FEATURES.MULTI_TENANCY);
-        }
+        }*/
 
         boolean finalDidExist = false;
         boolean didExist = AuthRecipe.deleteNonAuthRecipeUser(tenantIdentifier, storage,
