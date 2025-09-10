@@ -77,12 +77,12 @@ public class Multitenancy extends ResourceDistributor.SingletonResource {
             InvalidProviderConfigException {
 
         {
-            if (!targetTenant.equals(new TenantIdentifier(null, null, null))) {
+            /*if (!targetTenant.equals(new TenantIdentifier(null, null, null))) {
                 if (Arrays.stream(FeatureFlag.getInstance(main, new AppIdentifier(null, null)).getEnabledFeatures())
                         .noneMatch(ee_features -> ee_features == EE_FEATURES.MULTI_TENANCY)) {
                     throw new FeatureNotEnabledException(EE_FEATURES.MULTI_TENANCY);
                 }
-            }
+            }*/
         }
 
         // Then we check for permissions based on sourceTenant
